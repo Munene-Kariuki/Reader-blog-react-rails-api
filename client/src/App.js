@@ -1,7 +1,23 @@
+import React, { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const[user, setUser] = useState(null)
+  
+  //Auto login 
+  useEffect(() => {
+    fetch('/me')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => setUser(user))
+      }
+    })
+  }, []) 
+
+  if(!user) return <Login onlogin={setUser} />
+
   return (
     <div className="App">
       <header className="App-header">
