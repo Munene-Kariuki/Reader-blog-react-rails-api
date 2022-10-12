@@ -91,14 +91,16 @@ puts "📃 Seeding data..."
 #     time: 3
 # })
 
-#comments
-30.times do 
-  Comment.create(
-    article_id: rand(1..12),
-    user_id: rand(1..5),
-    #Generate random sentences.
-    comment: Faker::Company.catch_phrase
-  )
-end
+# #comments
+# 30.times do 
+#   Comment.create(
+#     article_id: rand(1..12),
+#     user_id: rand(1..5),
+#     #Generate random sentences.
+#     comment: Faker::Company.catch_phrase
+#   )
+# end
+
+User.create(username: "Denis", password_digest: "karis", profile_image: "https://thumbs.dreamstime.com/b/businessman-icon-image-male-avatar-profile-vector-glasses-beard-hairstyle-179728610.jpg")
 
 puts "✅ Done seeding"

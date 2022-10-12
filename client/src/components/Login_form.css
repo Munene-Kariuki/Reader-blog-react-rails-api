@@ -26,3 +26,22 @@ input[type='submit'] {
   padding: 0.5rem;
   border-radius: 7px;
 }
+
+.hr-login {
+  margin-left: 15rem;
+  margin-top: 3rem;
+  width: 40%;
+}
+
+.sign-up-redirect {
+  margin-left: 18rem;
+  color: black;
+}
+
+.sign-up-redirect-btn {
+  background-color: #FDF0F5; 
+  color: #4F3683; 
+  padding: 10px; 
+  border: none;
+  margin-left: 1rem;
+}

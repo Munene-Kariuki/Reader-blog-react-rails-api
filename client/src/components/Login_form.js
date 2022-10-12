@@ -7,6 +7,7 @@ function Login_form({onlogin}) {
     password: ""
   });
   const [errors, setErrors] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
 
   //update form data
   function handleChange(event) {
@@ -19,14 +20,39 @@ function Login_form({onlogin}) {
     });
   }
 
+  //Handle log in form submit
+  function handleSubmit(e) {
+    e.preventDefault() 
+    setIsLoading(true) 
+    fetch('/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      }, 
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      setIsLoading(false)
+      if (res.ok) {
+        res.json() 
+        .then((user) => onlogin(user));
+      } 
+      else {
+        res.json() 
+        .then((err) => console.log(err.errors));
+      }
+    });
+  }
+
   return (
     <div>
       <h1 className="login-header">Reader</h1>
-      <form>
+      <form onSubmit={handleSubmit} >
         <input placeholder="Username..." type='text' name="username" onChange={handleChange} value={formData.username} /> 
-        <input placeholder="Password..." type='text' name="password" onChange={handleChange} value={formData.password} /> 
-        <input type='submit' value='Login' />
+        <input placeholder="Password..." type='password' name="password" onChange={handleChange} value={formData.password} /> 
+        <input type='submit' value={isLoading ? "Logging in..." : "Login"} />
       </form>
+      <hr className="hr-login" /> 
+      <p className="sign-up-redirect" >Don't have an account?  <button className="sign-up-redirect-btn" >Sign up</button></p>
     </div>
   )
 }
