@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Error from './Error';
 
 function Sign_up_form({setShowLogin, onlogin}) {
   const [formData, setFormData] = useState({
@@ -7,7 +8,7 @@ function Sign_up_form({setShowLogin, onlogin}) {
     password_confirmation: "",
     profile_image: ""
   });
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   //update form data
@@ -37,7 +38,7 @@ function Sign_up_form({setShowLogin, onlogin}) {
         res.json().then((user) => onlogin(user))
       }
       else {
-        res.json().then((err) => console.log(err.errors))
+        res.json().then((err) => setErrors(err.errors))
       }
     });
     setFormData({
@@ -58,6 +59,9 @@ function Sign_up_form({setShowLogin, onlogin}) {
         <input placeholder='Image url...' type='text' name='profile_image' onChange={handleChange} value={formData.profile_image} /> 
         <input type='submit' value={isLoading ? "Signing up..." : "Sign up"} />
       </form>
+      {errors.map((error) => {
+        return <Error key={error} error={error} />
+      })}
       <hr className="hr-login" /> 
       <p className="sign-up-redirect" >Already have an account? <button className="sign-up-redirect-btn" onClick={() => setShowLogin(true)} >Log in</button></p>
     </div>

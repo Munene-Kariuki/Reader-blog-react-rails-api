@@ -7,15 +7,15 @@ function App() {
   const[user, setUser] = useState(null)
   
   //Auto login 
-  useEffect(() => {
-    fetch('/me')
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => setUser(user))
-      }
-    })
-  }, []) 
+  // useEffect(() => {
+  //   fetch('/me')
+  //   .then((res) => {
+  //     if (res.ok) {
+  //       res.json()
+  //       .then((user) => setUser(user))
+  //     }
+  //   })
+  // }, []) 
 
   if(!user) return <Login onlogin={setUser} />
 
