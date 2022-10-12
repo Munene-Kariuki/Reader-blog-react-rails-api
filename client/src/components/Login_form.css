@@ -1,0 +1,28 @@
+.login-header {
+  font-family: 'MedievalSharp', cursive;
+  text-align: center;
+  color: #4F3683;
+}
+form {
+  margin-left: 15rem; 
+  margin-top: 8rem;
+}
+
+input {
+  width: 40%;
+  margin: 1rem; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  padding: 0.8rem; 
+  border-radius: 0.9rem;
+  box-sizing: border-box;
+}
+
+input[type='submit'] {
+  background-color: #4F3683; 
+  color: white;
+  width: 7%;
+  padding: 0.5rem;
+  border-radius: 7px;
+}

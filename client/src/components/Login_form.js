@@ -21,7 +21,7 @@ function Login_form({onlogin}) {
 
   return (
     <div>
-      <h1>Reader</h1>
+      <h1 className="login-header">Reader</h1>
       <form>
         <input placeholder="Username..." type='text' name="username" onChange={handleChange} value={formData.username} /> 
         <input placeholder="Password..." type='text' name="password" onChange={handleChange} value={formData.password} /> 
