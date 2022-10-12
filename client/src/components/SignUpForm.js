@@ -32,7 +32,7 @@ function Sign_up_form({setShowLogin, onlogin}) {
         <input type='submit' value={isLoading ? "Signing up..." : "Sign up"} />
       </form>
       <hr className="hr-login" /> 
-      <p className="sign-up-redirect" >Don't have an account? <button className="sign-up-redirect-btn" onClick={() => setShowLogin(true)} >Log in</button></p>
+      <p className="sign-up-redirect" >Already have an account? <button className="sign-up-redirect-btn" onClick={() => setShowLogin(true)} >Log in</button></p>
     </div>
   )
 }
