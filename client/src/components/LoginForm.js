@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import './Login_form.css';
+import Error from "./Error";
 
 function Login_form({onlogin, setShowLogin }) {
   const [formData, setFormData] = useState({
     username: "",
     password: ""
   });
-  // const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   //update form data
@@ -38,7 +39,7 @@ function Login_form({onlogin, setShowLogin }) {
       } 
       else {
         res.json() 
-        .then((err) => console.log(err.errors));
+        .then((err) => setErrors(err.errors));
       }
     });
     setFormData({
@@ -54,6 +55,9 @@ function Login_form({onlogin, setShowLogin }) {
         <input placeholder="Password..." type='password' name="password" onChange={handleChange} value={formData.password} /> 
         <input type='submit' value={isLoading ? "Logging in..." : "Login"} />
       </form>
+      {errors.map((error) => {
+        return <Error key={error} error={error} />
+      })}
       <hr className="hr-login" /> 
       <p className="sign-up-redirect" >Don't have an account? <button className="sign-up-redirect-btn" onClick={() => setShowLogin(false)} >Sign up</button></p>
     </div>
