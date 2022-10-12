@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import logo from '../logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Login from './loginAndSignup/Login'
+import Login from './loginAndSignup/Login';
+import Navbar from "./navbar/Navbar";
+import Home from "./home/Home";
+import Stories from "./storiess/Stories";
+import Write from "./write/Write";
 
 function App() {
   const[user, setUser] = useState(null)
@@ -20,21 +24,13 @@ function App() {
   if(!user) return <Login onlogin={setUser} />
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar user={user} />
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/stories' element={<Stories />} />
+        <Route path='/write' element={<Write />} />
+      </Routes>
     </div>
   );
 }
