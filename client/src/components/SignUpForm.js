@@ -26,8 +26,8 @@ function Sign_up_form({setShowLogin, onlogin}) {
     <div>
       <form>
         <input placeholder='Username...' type='text' name='username' onChange={handleChange} value={formData.username} /> 
-        <input placeholder='Password...' type='text' name='password' onChange={handleChange} value={formData.password} /> 
-        <input placeholder='Retype password...' type='text' name='password_confirmation' onChange={handleChange} value={formData.password_confirmation} /> 
+        <input placeholder='Password...' type='password' name='password' onChange={handleChange} value={formData.password} /> 
+        <input placeholder='Retype password...' type='password' name='password_confirmation' onChange={handleChange} value={formData.password_confirmation} /> 
         <input placeholder='Image url...' type='text' name='profile_image' onChange={handleChange} value={formData.profile_image} /> 
         <input type='submit' value={isLoading ? "Signing up..." : "Sign up"} />
       </form>
