@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 import logo from '../logo.svg';
 import './App.css';
-import Login from "./Login";
+import Login from './loginAndSignup/Login'
 
 function App() {
   const[user, setUser] = useState(null)
   
-  //Auto login 
-  // useEffect(() => {
-  //   fetch('/me')
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => setUser(user))
-  //     }
-  //   })
-  // }, []) 
+  // Auto login and keeps user logged in
+  useEffect(() => {
+    fetch('/me')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => setUser(user))
+      }
+    })
+  }, []) 
 
   if(!user) return <Login onlogin={setUser} />
 
