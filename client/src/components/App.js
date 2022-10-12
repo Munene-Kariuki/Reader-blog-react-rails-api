@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import logo from './logo.svg';
+import Login_form from "./Login_form";
+import logo from '../logo.svg';
 import './App.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     })
   }, []) 
 
-  if(!user) return <Login onlogin={setUser} />
+  if(!user) return <Login_form onlogin={setUser} />
 
   return (
     <div className="App">
