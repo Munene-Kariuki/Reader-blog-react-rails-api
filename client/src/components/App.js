@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import './App.css';
 import Login from './loginAndSignup/Login';
 import Navbar from "./navbar/Navbar";
@@ -24,14 +24,24 @@ function App() {
   if(!user) return <Login onlogin={setUser} />
 
   return (
-    <div>
+    <>
       <Navbar user={user} />
-      <Routes>
-        <Route path='/' exact element={<Home />} />
-        <Route path='/stories' element={<Stories />} />
-        <Route path='/write' element={<Write />} />
-      </Routes>
-    </div>
+      <main>
+        <BrowserRouter>
+          <Switch>
+            <Route path='/'>
+              <Home />
+            </Route>
+            <Route path='/stories'>
+              <Stories />
+            </Route>
+            <Route path='/write'>
+              <Write />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </main>
+    </>
   );
 }
 
