@@ -1,0 +1,13 @@
+.article-hr {
+  margin-right: 10rem;
+  margin-bottom: 1rem;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile_image {
+  border-radius: 50%; 
+  height: 2rem;
+}
