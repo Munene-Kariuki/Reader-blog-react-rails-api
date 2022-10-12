@@ -16,7 +16,7 @@ function Navbar() {
     <nav>
       <div className='nav-items'>
         <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3V0LBQKekq1nVwYglVndw-r9OmLh0J4nwUw&usqp=CAU' alt='logo' className='app-logo' />
-        <h2>Reader</h2>
+        <h1>Reader</h1>
       </div> 
       <div className='links'>
         <Router>
