@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  border-bottom: solid 1px black;
+}
+
+.app-logo {
+  height: 6rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+} 
+
+.nav-items {
+  display: flex; 
+  margin-top: 0.7rem;
+}
+
+.nav-items > h2 {
+  margin-top: 2rem;
+}
