@@ -6,7 +6,7 @@ function Login_form({onlogin, setShowLogin }) {
     username: "",
     password: ""
   });
-  const [errors, setErrors] = useState([])
+  // const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   //update form data
@@ -40,6 +40,10 @@ function Login_form({onlogin, setShowLogin }) {
         res.json() 
         .then((err) => console.log(err.errors));
       }
+    });
+    setFormData({
+      username: "",
+      password: "" 
     });
   }
 

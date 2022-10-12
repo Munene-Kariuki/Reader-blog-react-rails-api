@@ -7,7 +7,7 @@ function Sign_up_form({setShowLogin, onlogin}) {
     password_confirmation: "",
     profile_image: ""
   });
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   //update form data
@@ -21,10 +21,37 @@ function Sign_up_form({setShowLogin, onlogin}) {
     });
   }
 
+  //Handle form submit 
+  function handleSubmit(e){
+    e.preventDefault() 
+    setIsLoading(true) 
+    fetch('/signup', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      setIsLoading(false)
+      if (res.ok) {
+        res.json().then((user) => onlogin(user))
+      }
+      else {
+        res.json().then((err) => console.log(err.errors))
+      }
+    });
+    setFormData({
+      username: "",
+      password: "",
+      password_confirmation: "",
+      profile_image: ""
+    });
+  }
+
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit} >
         <input placeholder='Username...' type='text' name='username' onChange={handleChange} value={formData.username} /> 
         <input placeholder='Password...' type='password' name='password' onChange={handleChange} value={formData.password} /> 
         <input placeholder='Retype password...' type='password' name='password_confirmation' onChange={handleChange} value={formData.password_confirmation} /> 
