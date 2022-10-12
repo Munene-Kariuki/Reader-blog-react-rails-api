@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Login_form.css';
 
-function Login_form({onlogin}) {
+function Login_form({onlogin, setShowLogin }) {
   const [formData, setFormData] = useState({
     username: "",
     password: ""
@@ -45,14 +45,13 @@ function Login_form({onlogin}) {
 
   return (
     <div>
-      <h1 className="login-header">Reader</h1>
       <form onSubmit={handleSubmit} >
         <input placeholder="Username..." type='text' name="username" onChange={handleChange} value={formData.username} /> 
         <input placeholder="Password..." type='password' name="password" onChange={handleChange} value={formData.password} /> 
         <input type='submit' value={isLoading ? "Logging in..." : "Login"} />
       </form>
       <hr className="hr-login" /> 
-      <p className="sign-up-redirect" >Don't have an account?  <button className="sign-up-redirect-btn" >Sign up</button></p>
+      <p className="sign-up-redirect" >Don't have an account? <button className="sign-up-redirect-btn" onClick={() => setShowLogin(false)} >Sign up</button></p>
     </div>
   )
 }

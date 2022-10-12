@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Login_form from "./Login_form";
 import logo from '../logo.svg';
 import './App.css';
+import Login from "./Login";
 
 function App() {
   const[user, setUser] = useState(null)
@@ -17,7 +17,7 @@ function App() {
     })
   }, []) 
 
-  if(!user) return <Login_form onlogin={setUser} />
+  if(!user) return <Login onlogin={setUser} />
 
   return (
     <div className="App">

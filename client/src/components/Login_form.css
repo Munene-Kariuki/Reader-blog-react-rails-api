@@ -1,10 +1,5 @@
-.login-header {
-  font-family: 'MedievalSharp', cursive;
-  text-align: center;
-  color: #4F3683;
-}
 form {
-  margin-left: 15rem; 
+  margin-left: 20rem; 
   margin-top: 8rem;
 }
 
@@ -28,13 +23,13 @@ input[type='submit'] {
 }
 
 .hr-login {
-  margin-left: 15rem;
+  margin-left: 20rem;
   margin-top: 3rem;
   width: 40%;
 }
 
 .sign-up-redirect {
-  margin-left: 18rem;
+  margin-left: 23rem;
   color: black;
 }
 
