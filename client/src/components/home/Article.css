@@ -1,13 +1,49 @@
 .article-hr {
   margin-right: 10rem;
-  margin-bottom: 1rem;
 }
 
 .profile {
   display: flex;
 }
 
+.date_created {
+  margin-left: 0.5rem; 
+  margin-top: 1.5rem; 
+  font-size: smaller;
+}
+
+.username {
+  margin-left: 1rem;
+  font-weight: 400;
+}
+
 .profile_image {
   border-radius: 50%; 
   height: 2rem;
+  margin-top: 1rem;
+}
+
+.content {
+  margin-left: 2rem;
+}
+
+.title {
+  font-weight: 2000;
+}
+
+.story {
+  width: 80%;
+}
+
+.btns {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.btn {
+  background-color: #D9D9D9; 
+  padding: 0.8rem; 
+  border-radius: 10px; 
+  border: none;
+  margin: 0.5rem;
 }
