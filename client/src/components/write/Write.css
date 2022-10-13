@@ -1,4 +1,11 @@
 .write-header {
   margin-left: 20rem;
   margin-top: 2rem;
+} 
+
+.tell-story {
+  width: 39%; 
+  height: 6rem;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
 }

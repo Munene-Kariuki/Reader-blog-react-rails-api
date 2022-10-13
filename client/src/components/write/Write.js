@@ -8,7 +8,7 @@ function Write({user}) {
     title: "",
     topic: "",
     story: "",
-    time: 0
+    time: ""
   })
 
   //Update form data
