@@ -43,7 +43,7 @@ function App() {
       <main>
       <Routes>
         <Route path='/' exact element={<Home articles={articles} />} />
-        <Route path='/stories' element={<Stories articles={articles} user={user} />} />
+        <Route path='/stories' element={<Stories setArticles={setArticles} articles={articles} user={user} />} />
         <Route path='/write' element={<Write addArticle={handleAddArticle} user={user} />} />
       </Routes>
       </main>

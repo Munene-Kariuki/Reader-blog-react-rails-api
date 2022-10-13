@@ -1,17 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './UserArticle.css'
+import UpdateForm from './UpdateForm'
 
-function UserArticle({article}) {
+function UserArticle({article, ondelete, onupdate}) {
   const {title, topic, story, time} = article
   const [update, setUpdate] = useState(false)
 
   function handleDelete() {
-    console.log("delete")
+    ondelete(article.id)
   }
 
   function handleUpdate() {
     setUpdate(!update)
-    console.log("Updated")
+  }
+
+  function articleUpdate(formData) {
+    onupdate(formData)
+    setUpdate(!update)
   }
 
   return (
@@ -26,7 +31,7 @@ function UserArticle({article}) {
           <i className="fa-sharp fa-solid fa-trash" onClick={handleDelete} ></i>
         </div>
       </div>
-      {update? <UpdateForm book={book} handleUpdate={bookUpdate} />: null }
+      {update? <UpdateForm article={article} handleUpdate={articleUpdate} />: null }
     </div>
   )
 }

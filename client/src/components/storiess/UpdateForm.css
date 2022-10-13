@@ -1,0 +1,15 @@
+.update-form{
+  width: fit-content;
+  margin-left: 0;
+  margin-top: 1rem;
+}
+
+.update-form > input {
+  width: 100%;
+}
+
+.update-form > textarea {
+  margin-left: 1rem; 
+  width: 99%;
+  height: 6rem;
+}
