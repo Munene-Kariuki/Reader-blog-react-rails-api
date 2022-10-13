@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import './Login_form.css';
-import Error from "./Error";
+import Error from "../Error";
 
 function Login_form({onlogin, setShowLogin }) {
   const [formData, setFormData] = useState({

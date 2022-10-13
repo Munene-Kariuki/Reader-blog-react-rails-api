@@ -29,6 +29,11 @@ function App() {
       .then((data) => setArticles(data))
   }, [])
 
+  //Add article after post
+  function handleAddArticle(article) {
+    setArticles(article, ...articles)
+  }
+
   if(!user) return <Login onlogin={setUser} />
 
 
@@ -39,7 +44,7 @@ function App() {
       <Routes>
         <Route path='/' exact element={<Home articles={articles} />} />
         <Route path='/stories' element={<Stories />} />
-        <Route path='/write' element={<Write user={user} />} />
+        <Route path='/write' element={<Write addArticle={handleAddArticle} user={user} />} />
       </Routes>
       </main>
     </>

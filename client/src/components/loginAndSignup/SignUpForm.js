@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Error from './Error';
+import Error from '../Error';
 
 function Sign_up_form({setShowLogin, onlogin}) {
   const [formData, setFormData] = useState({
