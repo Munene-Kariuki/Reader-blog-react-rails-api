@@ -1,0 +1,19 @@
+.article-card {
+  width: 25%;
+  border: solid 1px grey;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  color: #4F3683;
+}
+
+.icons > i {
+  font-size: 1.5rem;
+}
