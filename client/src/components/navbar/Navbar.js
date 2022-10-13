@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter as Router } from 'react-router-dom'; 
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
@@ -19,11 +18,9 @@ function Navbar() {
         <h1>Reader</h1>
       </div> 
       <div className='links'>
-        <Router>
-          <NavLink exact to={'/'} style={linkStyles}><strong className='nav-link'>Home</strong></NavLink>
-          <NavLink exact to={'/stories'} style={linkStyles}><strong className='nav-link'>Stories</strong></NavLink>
-          <NavLink exact to={'/write'} style={linkStyles}><strong className='nav-link'>Write</strong></NavLink>
-        </Router>
+        <NavLink exact to={'/'} style={linkStyles}><strong className='nav-link'>Home</strong></NavLink>
+        <NavLink exact to={'/stories'} style={linkStyles}><strong className='nav-link'>Stories</strong></NavLink>
+        <NavLink exact to={'/write'} style={linkStyles}><strong className='nav-link'>Write</strong></NavLink>
       </div>
     </nav>
   )

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router } from 'react-router-dom'; 
-import { Switch, Route } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './loginAndSignup/Login';
 import Navbar from "./navbar/Navbar";
@@ -28,19 +27,11 @@ function App() {
     <>
       <Navbar user={user} />
       <main>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Home/>
-            </Route>
-            <Route path="/stories">
-              <Stories/>
-            </Route>
-            <Route path="/write">
-              <Write />
-            </Route>
-          </Switch>
-        </Router>
+      <Routes>
+        <Route path='/' exact element={<Home />} />
+        <Route path='/stories' element={<Stories />} />
+        <Route path='/write' element={<Write />} />
+      </Routes>
       </main>
     </>
   );
