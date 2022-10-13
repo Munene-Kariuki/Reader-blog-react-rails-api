@@ -38,6 +38,21 @@ nav {
   color: gold;
 }
 
+.logout-btn {
+  margin-top: 1rem;
+  margin-left: 15rem;
+  height: 3rem;
+  background-color: #4F3683;
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.logout-btn:hover { 
+  transform: scale(1.1, 1.1);
+  color: gold;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .app-logo {
     animation: App-logo-spin infinite 5s alternate-reverse;

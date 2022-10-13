@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
-function Navbar() {
+function Navbar({setUser}) {
   const linkStyles = {
     display: "inline-block",
     padding: "12px",
@@ -10,6 +10,14 @@ function Navbar() {
     textDecoration: "none",
     color: "black",
   };
+
+  function handleLogout() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
 
   return (
     <nav>
@@ -22,6 +30,7 @@ function Navbar() {
         <NavLink exact to={'/stories'} style={linkStyles}><strong className='nav-link'>Stories</strong></NavLink>
         <NavLink exact to={'/write'} style={linkStyles}><strong className='nav-link'>Write</strong></NavLink>
       </div>
+      <button onClick={handleLogout} className='logout-btn' >Log out</button>
     </nav>
   )
 }

@@ -40,7 +40,7 @@ function App() {
 
   return (
     <>
-      <Navbar user={user} />
+      <Navbar setUser={setUser} user={user} />
       <main>
       <Routes>
         <Route path='/' exact element={<Home articles={articles} />} />
