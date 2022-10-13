@@ -25,7 +25,7 @@ function Write({user}) {
   return (
     <div>
       <h2 className='write-header'>Post your story:</h2>
-      <form>
+      <form >
         <input placeholder='Title...' type='text' name='title' onChange={handleChange} value={formData.title} /> 
         <input placeholder='Topic...' type='text' name='topic' onChange={handleChange} value={formData.topic} />
         <textarea placeholder='Tell your story...' type='text' name='story' onChange={handleChange} value={formData.story} className='tell-story' /> 

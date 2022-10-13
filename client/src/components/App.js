@@ -9,6 +9,7 @@ import Write from "./write/Write";
 
 function App() {
   const[user, setUser] = useState(null)
+  const [articles, setArticles] = useState([])
   
   // Auto login and keeps user logged in
   useEffect(() => {
@@ -21,14 +22,22 @@ function App() {
     })
   }, []) 
 
+  //fetch articles 
+  useEffect(() => {
+    fetch('/articles') 
+      .then((res) => res.json())
+      .then((data) => setArticles(data))
+  }, [])
+
   if(!user) return <Login onlogin={setUser} />
+
 
   return (
     <>
       <Navbar user={user} />
       <main>
       <Routes>
-        <Route path='/' exact element={<Home />} />
+        <Route path='/' exact element={<Home articles={articles} />} />
         <Route path='/stories' element={<Stories />} />
         <Route path='/write' element={<Write user={user} />} />
       </Routes>

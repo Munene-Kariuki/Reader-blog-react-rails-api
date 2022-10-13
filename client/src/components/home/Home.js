@@ -3,16 +3,7 @@ import Filter from './Filter'
 import Article from './Article'
 import './Home.css'
 
-function Home() {
-  const [articles, setArticles] = useState([])
-
-  //fetch articles 
-  useEffect(() => {
-    fetch('/articles') 
-      .then((res) => res.json())
-      .then((data) => setArticles(data))
-  }, [])
-
+function Home({articles}) {
   console.log(articles)
 
   const displayArticles = articles.map((article) => {
