@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './UpdateForm.css'
 
-function UpdateForm({article, handleUpdate, setUpdate}) {
+function UpdateForm({article, handleUpdate}) {
   const {user, title, topic, story, time, id} = article;
   const [formData, setFormData] = useState({
     id: id, 

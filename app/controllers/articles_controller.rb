@@ -21,6 +21,12 @@ class ArticlesController < ApplicationController
     head :no_content 
   end
 
+  def update 
+    article = find_article 
+    article.update!(article_params)
+    render json: article, status: :accepted
+  end
+
   private 
   def find_article 
     Article.find_by(id: params[:id])

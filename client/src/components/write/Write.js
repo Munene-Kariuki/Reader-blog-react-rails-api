@@ -25,8 +25,8 @@ function Write({user, addArticle}) {
   }
 
   //Handle artcile submit
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
+    // e.preventDefault()
     fetch('/articles', {
       method: 'POST',
       headers: {

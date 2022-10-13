@@ -32,8 +32,10 @@ function Stories({articles, user, setArticles}) {
 
   //Handle article update 
   function handle_update(formData) {
-    fetch(`/articles/${formData.id}`, {
-      method: 'PUT',
+    const id = formData.id
+    delete formData.id
+    fetch(`/articles/${id}`, {
+      method: 'PATCH',
       headers: {
         "Content-Type": "application/json",
       },
