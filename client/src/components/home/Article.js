@@ -1,9 +1,14 @@
 import React from 'react'
 import './Article.css'
+import { useNavigate } from 'react-router-dom'
 
 function Article({article}) {
-  const {title, user, topic, created_at, story, time} = article
+  const { id, title, user, topic, created_at, story, time} = article;
+  const history = useNavigate();
 
+  function handleClick() {
+    history(`/${id}`) 
+  }
 
   return (
     <div>
@@ -19,7 +24,7 @@ function Article({article}) {
       </div>
       <div className='btns'>
         <button className='btn'>{topic}</button>
-        <button className='btn'>{time} minutes read</button>
+        <button onClick={handleClick} className='btn'>{time} minutes read</button>
       </div>
     </div>
   )

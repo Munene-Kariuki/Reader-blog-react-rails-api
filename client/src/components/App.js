@@ -6,6 +6,7 @@ import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
 import Stories from "./storiess/Stories";
 import Write from "./write/Write";
+import ArticleDetail from "./home/ArticleDetail";
 
 function App() {
   const[user, setUser] = useState(null)
@@ -43,6 +44,7 @@ function App() {
       <main>
       <Routes>
         <Route path='/' exact element={<Home articles={articles} />} />
+        <Route path='/:id' element={<ArticleDetail user={user} />} />
         <Route path='/stories' element={<Stories setArticles={setArticles} articles={articles} user={user} />} />
         <Route path='/write' element={<Write addArticle={handleAddArticle} user={user} />} />
       </Routes>

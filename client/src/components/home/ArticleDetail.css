@@ -1,0 +1,24 @@
+.article-detail {
+  margin-left: 5rem;
+  width: 70%;
+  margin-top: 4rem;
+}
+
+.comments {
+  margin-top: 3rem;
+}
+
+.comment-form {
+  width: 30%; 
+  margin-top: 2rem;
+  margin-left: 3rem;
+}
+
+.comment-form > textarea {
+  width: 100%;
+  height: 3rem;
+}
+
+.comment-form > input {
+  width: 50%;
+}
