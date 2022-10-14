@@ -20,7 +20,7 @@ function Article({article}) {
       </div>
       <div className='content'>
         <h3 className='title'>{title}</h3>
-        <p className='story'>{story.substring(0, 300)}...</p>
+        <p className='story'>{story}...</p>
       </div>
       <div className='btns'>
         <button className='btn'>{topic}</button>

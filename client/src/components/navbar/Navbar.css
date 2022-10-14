@@ -41,11 +41,12 @@ nav {
 .logout-btn {
   margin-top: 1rem;
   margin-left: 15rem;
-  height: 3rem;
+  height: 2.8rem;
   background-color: #4F3683;
   color: white;
   border: none;
   padding: 1rem;
+  border-radius: 10px;
 }
 
 .logout-btn:hover { 
