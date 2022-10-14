@@ -5,7 +5,7 @@ This is a blog site application, a user is able to login/sign up, view articles 
 #### By **Denis** created on, 13th October 2022
 
 ## Screenshot
-   ![image](./src/images/app-screenshot.png)
+   ![image](./client/src/images/app-screenshot.png.png)
 
 
 ## Table of Content
